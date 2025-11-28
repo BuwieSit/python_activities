@@ -21,11 +21,23 @@ def inputHandler(USER_INPUT):
 
 
 allNum = []
-
-for num in range(1 , 76):
-    allNum.append(num)
+B_NUMBERS = []
+I_NUMBERS = []
+N_NUMBERS = []
+G_NUMBERS = []
+O_NUMBERS = []
 
 print("                             Welcome to buBINGO\n")
 print("Starting a game....")
 
+for num in range(1 , 76):
+    allNum.append(num)
 
+for row in range(len(allNum)):
+    print(allNum[row], end= ", ")
+
+# userInput = input("Do you want to pick a random number? (Y/N)")
+
+# while True:
+#     inputHandler(USER_INPUT = userInput)
+    
