@@ -9,6 +9,8 @@
 # Y -> Repeat -> all available and picked list will be reset
 # N -> Stop program
 
+import random
+import time
 
 def inputHandler(USER_INPUT):
     match (USER_INPUT):
@@ -19,25 +21,60 @@ def inputHandler(USER_INPUT):
         case _:
             return "Invalid"
 
+print("                             Welcome to buBINGO\n")
+print("Starting a game....")
 
-allNum = []
+ALL_NUMBERS = []
 B_NUMBERS = []
 I_NUMBERS = []
 N_NUMBERS = []
 G_NUMBERS = []
 O_NUMBERS = []
+RANDOM_NUMBER = 0
 
-print("                             Welcome to buBINGO\n")
-print("Starting a game....")
+while True:
+    
+    for num in range(1 , 76):
+        ALL_NUMBERS.append(num)
+    
+    for row in range(len(ALL_NUMBERS)):
+        print(ALL_NUMBERS[row], end= ", ")
 
-for num in range(1 , 76):
-    allNum.append(num)
+    userInput = input("Do you want to pick a random number? (Y/N)").capitalize()
 
-for row in range(len(allNum)):
-    print(allNum[row], end= ", ")
+    print("\n                       Available Numbers")
+    print("                     B =", str(ALL_NUMBERS[0:15])[1:-1])
+    print("                     I =", str(ALL_NUMBERS[15:30])[1:-1])
+    print("                     N =", str(ALL_NUMBERS[30:45])[1:-1])
+    print("                     G =", str(ALL_NUMBERS[45:60])[1:-1])
+    print("                     O =", str(ALL_NUMBERS[60:75])[1:-1])
+    
+    INPUT_CONDITION = inputHandler(USER_INPUT = userInput)
+    
+    match INPUT_CONDITION:
+        case True:
+            RANDOM_NUMBER = random.choice(ALL_NUMBERS)
+            print("Drawn number:", RANDOM_NUMBER)
+            
+        case False:
+            print("Ending game...")
+            time.sleep(1.5)
+            userInput = input("Do you want another set of bingo game? (Y/N)")
+            inputHandler(USER_INPUT = userInput)
+            
+            if True:
+                continue
+            else:
+                print("Closing program...")
+                time.sleep(1.5)
+                print("Program closed.")
+                break
+    
+    if RANDOM_NUMBER 
+    B_NUMBERS.append()
+                    
 
-# userInput = input("Do you want to pick a random number? (Y/N)")
-
-# while True:
-#     inputHandler(USER_INPUT = userInput)
+        
+                
+        
     
